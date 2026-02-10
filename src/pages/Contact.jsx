@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './Contact.module.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -31,7 +32,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className={styles.contactContainer}>
+      <div className={styles.contactContent}>
       <header className="mb-12 text-center">
         <h1 className="text-5xl font-bold mb-6">Get In Touch</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -203,6 +205,7 @@ export default function Contact() {
             </ul>
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

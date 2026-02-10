@@ -1,6 +1,8 @@
+import styles from './Vision.module.css'
+
 export default function Vision() {
   return (
-    <div className="bg-background-light dark:bg-background-dark min-h-screen">
+    <div className={styles.visionContainer}>
       {/* Header */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-12">

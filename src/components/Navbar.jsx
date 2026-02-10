@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
+import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const location = useLocation()
@@ -17,37 +18,33 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <div className="hidden md:flex items-center gap-1">
+    <nav className={styles.navbar}>
+      <div className={styles.navContainer}>
+        <div className={styles.navContent}>
+          <div className={styles.navLinks}>
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? 'text-primary border-b-2 border-primary font-semibold'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-primary'
-                }`}
+                className={`${styles.navLink} ${isActive(link.path) ? styles.active : ''}`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center bg-gray-100 dark:bg-slate-800 rounded-lg px-3 py-1.5">
-              <span className="material-symbols-outlined text-gray-400 text-xl">search</span>
+          <div className={styles.navRight}>
+            <div className={styles.searchBox}>
+              <span className="material-symbols-outlined">search</span>
               <input
-                className="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-gray-400 dark:text-white"
+                className={styles.searchInput}
                 placeholder="Search resources..."
                 type="text"
               />
             </div>
             <Link
               to="/contact"
-              className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition-colors inline-block hidden md:block"
+              className={styles.contactBtn}
             >
               Contact Us
             </Link>
@@ -55,7 +52,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex items-center"
+            className={styles.mobileMenuButton}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="material-symbols-outlined">menu</span>
@@ -63,31 +60,25 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200 dark:border-slate-800">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`block px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? 'text-primary bg-gray-100 dark:bg-slate-800'
-                    : 'text-gray-600 dark:text-gray-400'
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
+          {navLinks.map((link) => (
             <Link
-              to="/contact"
-              className="block mx-4 my-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold text-center"
+              key={link.path}
+              to={link.path}
+              className={`${styles.navLink} ${isActive(link.path) ? styles.active : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact Us
+              {link.label}
             </Link>
-          </div>
-        )}
+          ))}
+          <Link
+            to="/contact"
+            className={styles.contactBtn}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </nav>
   )

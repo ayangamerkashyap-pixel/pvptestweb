@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './Reports.module.css'
 
 export default function Reports() {
   const [selectedYear, setSelectedYear] = useState(2024)
@@ -81,7 +82,8 @@ export default function Reports() {
   const current = reports[selectedYear]
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className={styles.reportsContainer}>
+      <div className={styles.contactContent}>
       <header className="mb-12 text-center">
         <h1 className="text-5xl font-bold mb-6">Annual Reports</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -179,6 +181,7 @@ export default function Reports() {
           Download PDF Report
         </a>
       </section>
+      </div>
     </div>
   )
 }

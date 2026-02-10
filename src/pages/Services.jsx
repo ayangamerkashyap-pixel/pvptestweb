@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import styles from './Services.module.css'
 
 export default function Services() {
   const services = [
@@ -41,50 +42,50 @@ export default function Services() {
   ]
 
   return (
-    <div className="bg-background-light dark:bg-background-dark min-h-screen">
+    <div className={styles.servicesContainer}>
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">Our Services</h1>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+      <section className={styles.headerSection}>
+        <div className={styles.headerSection}>
+          <h1 className={styles.headerTitle}>Our Services</h1>
+          <div className={styles.headerUnderline}></div>
+          <p className={styles.headerDescription}>
             Purbottar Vikash Parishad provides comprehensive services focused on health, education, livelihood, and community development. Our programs are designed to bring sustainable change in the lives of vulnerable communities.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <section className={styles.servicesSection}>
+        <div className={styles.servicesGrid}>
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 duration-300"
+              className={styles.serviceCard}
             >
               {/* Color Bar */}
-              <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+              <div style={{ background: `linear-gradient(to right, ${service.color})` }} className={styles.serviceColorBar}></div>
               
               {/* Content */}
-              <div className="p-8">
+              <div className={styles.serviceContent}>
                 {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-lg transition-all group-hover:scale-110 duration-300 text-white`}>
-                  <span className="material-symbols-outlined text-4xl">
+                <div className={styles.serviceIcon} style={{ background: `linear-gradient(135deg, ${service.color})` }}>
+                  <span className="material-symbols-outlined">
                     {service.icon}
                   </span>
                 </div>
                 
                 {/* Title & Description */}
-                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">
+                <h3 className={styles.serviceTitle}>
                   {service.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                <p className={styles.serviceDescription}>
                   {service.description}
                 </p>
                 
                 {/* Link */}
-                <a className="inline-flex items-center text-primary font-semibold text-sm group/link hover:gap-2 transition-all">
+                <a className={styles.serviceLink}>
                   Learn More
-                  <span className="material-symbols-outlined text-lg ml-2 group-hover/link:translate-x-1 transition-transform">
+                  <span className="material-symbols-outlined text-lg">
                     arrow_forward
                   </span>
                 </a>
@@ -94,10 +95,10 @@ export default function Services() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-primary via-blue-600 to-primary rounded-3xl p-12 text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-          <div className="relative z-10 text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Need Our Help?</h2>
+        <div className={styles.ctaSection}>
+          <div className={styles.ctaBackground}></div>
+          <div className={styles.ctaContent}>
+            <h2 className={styles.ctaTitle}>Need Our Help?</h2>
             <p className="text-white/90 mb-8 leading-relaxed">
               If you or your community needs support with any of our services, we are here to help. Get in touch with us to learn more about how we can assist you.
             </p>

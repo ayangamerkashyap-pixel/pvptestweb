@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import styles from './Gallery.module.css'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -43,42 +44,40 @@ export default function Gallery() {
   ]
 
   return (
-    <div className="bg-background-light dark:bg-background-dark min-h-screen">
+    <div className={styles.galleryContainer}>
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">Photo Gallery</h1>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+      <section className={styles.headerSection}>
+        <div className={styles.headerSection}>
+          <h1 className={styles.headerTitle}>Photo Gallery</h1>
+          <div className={styles.headerUnderline}></div>
+          <p className={styles.headerDescription}>
             Glimpses of our community development programs and initiatives
           </p>
         </div>
       </section>
 
       {/* Gallery Grid */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className={styles.gallerySection}>
+        <div className={styles.galleryGrid}>
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className={`group relative overflow-hidden rounded-2xl h-64 cursor-pointer transition-all ${
-                image.colSpan === 2 ? 'md:col-span-2' : ''
-              }`}
+              className={styles.galleryItem}
               onClick={() => setSelectedImage(image)}
             >
               {/* Image */}
               <img
                 src={image.src}
                 alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className={styles.galleryImage}
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className={styles.galleryItemOverlay}>
                 <div>
-                  <p className="text-white font-bold text-lg">{image.title}</p>
-                  <p className="text-white/80 text-sm flex items-center gap-1 mt-1">
-                    <span className="material-symbols-outlined text-base">zoom_in</span>
+                  <p className={styles.galleryItemTitle}>{image.title}</p>
+                  <p className={styles.galleryItemCaption}>
+                    <span className="material-symbols-outlined text-sm">zoom_in</span>
                     Click to view
                   </p>
                 </div>
@@ -91,56 +90,39 @@ export default function Gallery() {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn"
+          className={styles.modalBackdrop}
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-w-4xl w-full"
+            className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors p-2 rounded-lg hover:bg-white/10"
+              className={styles.closeButton}
             >
-              <span className="material-symbols-outlined text-3xl">close</span>
+              <span className="material-symbols-outlined">close</span>
             </button>
 
             {/* Image */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.title}
-                className="w-full h-auto"
-              />
-            </div>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className={styles.modalImage}
+            />
 
             {/* Title */}
-            <div className="text-center mt-6">
-              <h2 className="text-white text-2xl font-bold">{selectedImage.title}</h2>
-              <p className="text-white/70 mt-2 flex items-center justify-center gap-1">
-                <span className="material-symbols-outlined">image</span>
+            <div className={styles.modalInfo}>
+              <h2>{selectedImage.title}</h2>
+              <p style={{fontSize: '0.875rem', opacity: 0.7, marginTop: '0.5rem'}}>
+                <span className="material-symbols-outlined" style={{fontSize: '0.875rem'}}>image</span>
                 Click outside to close
               </p>
             </div>
           </div>
         </div>
       )}
-
-      {/* CSS for fade-in animation */}
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-in-out;
-        }
-      `}</style>
     </div>
   )
 }

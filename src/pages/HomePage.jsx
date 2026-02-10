@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import styles from './HomePage.module.css'
 
 export default function HomePage() {
   const news = [
@@ -65,33 +66,33 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="bg-background-light dark:bg-background-dark">
+    <div className={styles.homePageContainer}>
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="relative rounded-2xl overflow-hidden">
+      <section className={styles.heroSection}>
+        <div className={styles.heroContainer}>
           <div
-            className="aspect-[21/9] w-full bg-cover bg-center flex items-center justify-center text-center p-8"
+            className={styles.heroImage}
             style={{
               backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKr45KWAVmEkkVCG9lym61boHpnpy8-0uOkqUuy8roVYGTpbUyNM2LlFX5O7SxAdnQtMfDyZBtgtPgAdidrDTZ_0CMF36JAzBTOqziYrGpTvFCKlPcFlwoBtNx3P3r__HkCVJwQbS7TM8SBK1CczBLez7goJEtnkqEty8MTBipIP9_SRDDsW2sl6gJzuVRma-V5RWSngdcHlqHBe5ABzxTbvlPnDB_kS1oBelHc1Gz5WzYUXw4zLtHnAwBcRUQ4JHnA1bg4eGIkcgj")',
             }}
           >
-            <div className="max-w-3xl">
-              <h2 className="text-white text-4xl md:text-5xl font-black mb-4 leading-tight">
+            <div className={styles.heroContent}>
+              <h2 className={styles.heroTitle}>
                 Welcome to Purbottar Vikash Parishad
               </h2>
-              <p className="text-white/90 text-lg mb-8 font-light">
+              <p className={styles.heroDescription}>
                 Purbottar Vikash Parishad is a reputed NGO in Assam serving needy, poor and backward communities of the region with health, education, and livelihood programs.
               </p>
-              <div className="flex items-center justify-center gap-4 flex-wrap">
+              <div className={styles.heroCTA}>
                 <Link
                   to="/services"
-                  className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-base hover:bg-blue-700 transition-all inline-block"
+                  className={`${styles.heroButton} ${styles.heroButtonPrimary}`}
                 >
                   Explore Services
                 </Link>
                 <Link
                   to="/reports"
-                  className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-lg font-bold text-base hover:bg-white/20 transition-all inline-block"
+                  className={`${styles.heroButton} ${styles.heroButtonSecondary}`}
                 >
                   Latest Reports
                 </Link>
@@ -102,40 +103,40 @@ export default function HomePage() {
       </section>
 
       {/* News & Events Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex flex-col mb-12">
-          <div className="flex items-center justify-between mb-2">
+      <section className={styles.newsSection}>
+        <div className={styles.newsSectionHeader}>
+          <div className={styles.newsSectionTitleRow}>
             <div>
-              <h2 className="text-3xl font-black tracking-tight">News & Events</h2>
-              <p className="text-gray-600 dark:text-gray-400 mt-2">Stay informed with our latest updates and official announcements</p>
+              <h2 className={styles.newsSectionTitle}>News & Events</h2>
+              <p className={styles.newsSectionDescription}>Stay informed with our latest updates and official announcements</p>
             </div>
-            <Link className="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all group">
-              View all <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            <Link className={styles.viewAllLink}>
+              View all <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
           </div>
-          <div className="w-16 h-1 bg-primary rounded-full"></div>
+          <div className={styles.titleUnderline}></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className={styles.newsGrid}>
           {news.map((item) => (
             <article
               key={item.id}
-              className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group"
+              className={styles.newsCard}
             >
               <div
-                className="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
+                className={styles.newsCardImage}
                 style={{ backgroundImage: `url("${item.image}")` }}
               />
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`${item.categoryColor} text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full`}>
+              <div className={styles.newsCardContent}>
+                <div className={styles.newsCardMeta}>
+                  <span className={`${styles.newsCardCategory} ${item.categoryColor}`}>
                     {item.category}
                   </span>
-                  <span className="text-gray-400 text-xs font-medium">{item.date}</span>
+                  <span className={styles.newsCardDate}>{item.date}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-3 leading-snug line-clamp-2">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">{item.description}</p>
-                <a className="text-primary text-sm font-bold flex items-center gap-1 group/link cursor-pointer hover:gap-2 transition-all">
-                  Read More <span className="material-symbols-outlined text-xs group-hover/link:translate-x-1 transition-transform">east</span>
+                <h3 className={styles.newsCardTitle}>{item.title}</h3>
+                <p className={styles.newsCardDescription}>{item.description}</p>
+                <a className={styles.newsCardLink}>
+                  Read More <span className="material-symbols-outlined text-xs">east</span>
                 </a>
               </div>
             </article>
@@ -144,27 +145,20 @@ export default function HomePage() {
       </section>
 
       {/* Photo Gallery Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex flex-col mb-12">
-          <h2 className="text-3xl font-black tracking-tight mb-2">Photo Gallery</h2>
-          <div className="w-16 h-1 bg-primary rounded-full"></div>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className={styles.gallerySection}>
+        <h2 className={styles.gallerySectionTitle}>Photo Gallery</h2>
+        <div className={styles.galleryGrid}>
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl h-64 cursor-pointer ${
-                image.colSpan === 2 ? 'md:col-span-2' : ''
-              }`}
+              className={`${styles.galleryItem}`}
             >
               <img
                 src={image.src}
                 alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className={styles.galleryImage}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 duration-300">
-                <span className="text-white text-sm font-semibold">{image.title}</span>
-              </div>
+              <div className={styles.galleryItemTitle}>{image.title}</div>
             </div>
           ))}
         </div>
