@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo & About */}
           <div className={styles.footerSection}>
             <div className={styles.footerLogo}>
-              <img src="/public/Logo.jpg" alt="Logo" className={styles.footerLogoImg} />
+              <img src="/Images/Logo.jpg" alt="Logo" className={styles.footerLogoImg} />
               <span className={`${styles.footerLogoText}`}>PVP</span>
             </div>
             <p className={`${styles.footerDescription}`}>
