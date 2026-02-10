@@ -34,14 +34,29 @@ export default function HeroSlideshow() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div
-        className={styles.heroImage}
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[index]})`,
-          transition: 'background-image 0.5s ease-in-out',
-        }}
-      >
-        <div className={styles.heroContent}>
+      <div className={styles.heroImage} style={{position: 'relative'}}>
+        {images.map((src, i) => (
+          <div
+            key={i}
+            aria-hidden={i !== index}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              backgroundImage: `url(${src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              opacity: i === index ? 1 : 0,
+              transition: 'opacity 700ms ease',
+              zIndex: i === index ? 1 : 0,
+            }}
+          />
+        ))}
+
+        {/* overlay gradient to match previous look */}
+        <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))', zIndex: 2}} />
+
+        <div className={styles.heroContent} style={{position: 'relative', zIndex: 3}}>
           <h2 className={styles.heroTitle}>Welcome to Purbottar Vikash Parishad</h2>
           <p className={styles.heroDescription}>
             Purbottar Vikash Parishad is a reputed NGO in Assam serving needy, poor and backward communities of the region with health, education, and livelihood programs.

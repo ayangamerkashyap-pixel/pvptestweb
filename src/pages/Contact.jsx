@@ -20,7 +20,9 @@ export default function Contact() {
           <h3 className="text-xl font-bold mb-2">Address</h3>
           <p className="text-gray-600 dark:text-gray-400">
             Purbottar Vikash Parishad<br />
-            Assam, India
+            Napukhuri Extension Part-II,<br />
+            P.o., P.S. & DIST: Tinsukia,<br />
+            Assam - 786125
           </p>
         </div>
 
@@ -31,8 +33,8 @@ export default function Contact() {
           </div>
           <h3 className="text-xl font-bold mb-2">Email</h3>
           <p className="text-gray-600 dark:text-gray-400">
-            <a href="mailto:info@pvparishad.org" className="hover:text-primary transition-colors">
-              info@pvparishad.org
+            <a href="mailto:purbottarvikashparishad@gmail.com" className="hover:text-primary transition-colors">
+              purbottarvikashparishad@gmail.com
             </a>
           </p>
         </div>
@@ -44,8 +46,8 @@ export default function Contact() {
           </div>
           <h3 className="text-xl font-bold mb-2">Phone</h3>
           <p className="text-gray-600 dark:text-gray-400">
-            <a href="tel:+91XXXXXXXXXX" className="hover:text-primary transition-colors">
-              +91 XXXXXXXXXX
+            <a href="tel:+919435135088" className="hover:text-primary transition-colors">
+              +91 9435135088
             </a>
           </p>
         </div>
