@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import styles from './HomePage.module.css'
+import styles from '../styles/modules/HomePage.module.css'
 import { galleryImages } from '../data/galleryData'
 
 export default function HomePage() {

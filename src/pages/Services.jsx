@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import styles from './Services.module.css'
+import styles from '../styles/modules/Services.module.css'
 import ChildWelfareService from '../components/services/ChildWelfareService'
 import EducationalService from '../components/services/EducationalService'
 import EmbroideryTrainingService from '../components/services/EmbroideryTrainingService'

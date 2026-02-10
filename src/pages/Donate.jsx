@@ -1,4 +1,4 @@
-import styles from './Contact.module.css'
+import styles from '../styles/modules/Contact.module.css'
 import Navbar from '../components/Navbar'
 import ImpactSection from '../components/ImpactSection'
 import DonationForm from '../components/DonationForm'

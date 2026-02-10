@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
-import styles from '../../pages/Services.module.css';
+import styles from '../../styles/modules/Services.module.css';
 
 export default function AwarenessService() {
   const service = {
     icon: 'agriculture',
     title: 'AWARENESS MEETINGS',
-    description: 'Organic farming training, modern agricultural techniques, soil testing, and assistance with quality seeds and tools.',
+    description: 'Right from the inception of the organization the executives had very much interested to organize awareness programs in the interior and backward areas of these districts to protect from "HIV VIRUS", Cleanliness, awareness from cheating funds, Govt. Schemes MGNRDA The organization managed to organize attractive seminars, meetings, street drama, awareness processions in various places with collaboration with other NGO\'s during the financial year 2012-11 The organization has spent Rs. 11,490/- (Rupees Eleven Thousand Four Hundred Ninety) only for great success of the above awareness.',
     color: 'from-amber-500 to-orange-500',
   };
 
@@ -32,12 +31,12 @@ export default function AwarenessService() {
         </p>
         
         {/* Link */}
-        <Link to="/services/awareness" className={styles.serviceLink}>
+        {/* <a className={styles.serviceLink}>
           Learn More
           <span className="material-symbols-outlined text-lg">
             arrow_forward
           </span>
-        </Link>
+        </a> */}
       </div>
     </div>
   );

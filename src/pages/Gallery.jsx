@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Gallery.module.css'
+import styles from '../styles/modules/Gallery.module.css'
 import { galleryImages } from '../data/galleryData'
 
 export default function Gallery() {

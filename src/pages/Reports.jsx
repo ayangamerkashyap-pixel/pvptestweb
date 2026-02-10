@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styles from './Reports.module.css'
+import styles from '../styles/modules/Reports.module.css'
 
 export default function Reports() {
   const [selectedYear, setSelectedYear] = useState(2024)

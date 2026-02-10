@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
-import styles from '../../pages/Services.module.css';
+import styles from '../../styles/modules/Services.module.css';
 
 export default function EmbroideryTrainingService() {
   const service = {
     icon: 'business_center',
     title: 'EMBROIDERY TRAINING',
-    description: 'Vocational training, microfinance assistance, self-employment programs, and market linkage support for sustainable income.',
+    description: 'The maximum percentage of the people of this area are living under poverty line. The organization took resolution to provide training of cutting embroidery & tailoring to the educated poor girls and women for their self employment and ahs equipped with movable requirements for training and running smoothly and lot of women and girls established themselves. The organization has spent Rs. 14,500/- (Rupees Fourteen Thousand Five Hundred) only for the financial year 2012-13.',
     color: 'from-green-500 to-emerald-500',
   };
 
@@ -32,12 +31,12 @@ export default function EmbroideryTrainingService() {
         </p>
         
         {/* Link */}
-        <Link to="/services/embroidery" className={styles.serviceLink}>
+        {/* <a className={styles.serviceLink}>
           Learn More
           <span className="material-symbols-outlined text-lg">
             arrow_forward
           </span>
-        </Link>
+        </a> */}
       </div>
     </div>
   );

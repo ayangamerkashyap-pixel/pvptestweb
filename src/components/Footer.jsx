@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import styles from './Footer.module.css'
+import styles from '../styles/modules/Footer.module.css'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo & About */}
           <div className={styles.footerSection}>
             <div className={styles.footerLogo}>
-              <img src="/Images/Logo.jpg" alt="Logo" className={styles.footerLogoImg} />
+              <img src="/public/Logo.jpg" alt="Logo" className={styles.footerLogoImg} />
               <span className={`${styles.footerLogoText}`}>PVP</span>
             </div>
             <p className={`${styles.footerDescription}`}>
@@ -46,9 +46,9 @@ export default function Footer() {
             <h4 className={styles.footerSectionTitle}>Support</h4>
             <ul className={styles.footerLinks}>
               <li><Link to="/contact" className={styles.footerLink}>Contact Us</Link></li>
-              <li><a href="#" className={styles.footerLink}>Privacy Policy</a></li>
-              <li><a href="#" className={styles.footerLink}>Terms of Service</a></li>
-              <li><a href="#" className={styles.footerLink}>Donate</a></li>
+              <li><Link to="/privacy-policy" className={styles.footerLink}>Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service" className={styles.footerLink}>Terms of Service</Link></li>
+              <li><Link to="/donate" className={styles.footerLink}>Donate</Link></li>
             </ul>
           </div>
 

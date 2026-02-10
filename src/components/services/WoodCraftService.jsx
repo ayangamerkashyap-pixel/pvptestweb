@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
-import styles from '../../pages/Services.module.css';
+import styles from '../../styles/modules/Services.module.css';
 
 export default function WoodCraftService() {
   const service = {
     icon: 'group',
     title: 'WOOD CRAFT WORK',
-    description: 'Women empowerment programs, child protection initiatives, nutrition support, and maternal health awareness campaigns.',
+    description: 'There are some several skill hands in the interior villages of our districts. The organization selected the persons and supplied required raw materials for manufacturing different types of status, tubule, scenery etc. etc for development of their skillness and as well as to earn their livehood . For this act of kindness the skilled persons of these two districts very much grateful to our organization. The organization . the organization spent Raw Material, wages etc. for woodcraft Rs. 57,600/- (Rupees Fifty Seven Thousand Six Hundred) only for the year 2011-12.',
     color: 'from-indigo-500 to-purple-500',
   };
 
@@ -32,12 +31,12 @@ export default function WoodCraftService() {
         </p>
         
         {/* Link */}
-        <Link to="/services/wood-craft" className={styles.serviceLink}>
+        {/* <a className={styles.serviceLink}>
           Learn More
           <span className="material-symbols-outlined text-lg">
             arrow_forward
           </span>
-        </Link>
+        </a> */}
       </div>
     </div>
   );
