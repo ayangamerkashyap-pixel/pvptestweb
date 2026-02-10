@@ -35,7 +35,7 @@
 .headerUnderline {
   width: 5rem;
   height: 0.25rem;
-  background-color: #2563eb;
+  background-color: #106100;
   border-radius: 9999px;
   margin: 1.5rem auto;
 }
@@ -91,7 +91,7 @@
 }
 
 .reportHeader {
-  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  background: linear-gradient(135deg, #106100, #0ea5e9);
   padding: 2rem;
   color: white;
   display: flex;
@@ -190,7 +190,7 @@
 }
 
 .reportButtonPrimary {
-  background-color: #2563eb;
+  background-color: #106100;
   color: white;
 }
 

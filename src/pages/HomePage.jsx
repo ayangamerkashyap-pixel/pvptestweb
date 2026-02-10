@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import styles from '../styles/modules/HomePage.module.css'
 import { galleryImages } from '../data/galleryData'
+import HeroSlideshow from '../components/HeroSlideshow'
 
 export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -39,37 +40,7 @@ export default function HomePage() {
     <div className={styles.homePageContainer}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <div className={styles.heroContainer}>
-          <div
-            className={styles.heroImage}
-            style={{
-              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKr45KWAVmEkkVCG9lym61boHpnpy8-0uOkqUuy8roVYGTpbUyNM2LlFX5O7SxAdnQtMfDyZBtgtPgAdidrDTZ_0CMF36JAzBTOqziYrGpTvFCKlPcFlwoBtNx3P3r__HkCVJwQbS7TM8SBK1CczBLez7goJEtnkqEty8MTBipIP9_SRDDsW2sl6gJzuVRma-V5RWSngdcHlqHBe5ABzxTbvlPnDB_kS1oBelHc1Gz5WzYUXw4zLtHnAwBcRUQ4JHnA1bg4eGIkcgj")',
-            }}
-          >
-            <div className={styles.heroContent}>
-              <h2 className={styles.heroTitle}>
-                Welcome to Purbottar Vikash Parishad
-              </h2>
-              <p className={styles.heroDescription}>
-                Purbottar Vikash Parishad is a reputed NGO in Assam serving needy, poor and backward communities of the region with health, education, and livelihood programs.
-              </p>
-              <div className={styles.heroCTA}>
-                <Link
-                  to="/services"
-                  className={`${styles.heroButton} ${styles.heroButtonPrimary}`}
-                >
-                  Explore Services
-                </Link>
-                <Link
-                  to="/reports"
-                  className={`${styles.heroButton} ${styles.heroButtonSecondary}`}
-                >
-                  Latest Reports
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroSlideshow />
       </section>
 
       {/* News & Events Section */}

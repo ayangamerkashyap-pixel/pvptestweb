@@ -84,7 +84,7 @@
 }
 
 .heroButtonPrimary {
-  background-color: #2563eb;
+  background-color: #106100;
   color: white;
 }
 
@@ -152,7 +152,7 @@
 }
 
 .viewAllLink {
-  color: #2563eb;
+  color: #106100;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -169,7 +169,7 @@
 .titleUnderline {
   width: 4rem;
   height: 0.25rem;
-  background-color: #2563eb;
+  background-color: #106100;
   border-radius: 9999px;
 }
 
@@ -279,7 +279,7 @@
 }
 
 .newsCardLink {
-  color: #2563eb;
+  color: #106100;
   font-size: 0.875rem;
   font-weight: 700;
   display: flex;

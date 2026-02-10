@@ -91,7 +91,7 @@
 }
 
 .socialLink:hover {
-  color: #2563eb;
+  color: #106100;
   background-color: #f3f4f6;
 }
 
@@ -127,7 +127,7 @@
 
 .footerLink:hover,
 .footerLink.contact:hover {
-  color: #2563eb;
+  color: #106100;
   padding-left: 0.25rem;
 }
 

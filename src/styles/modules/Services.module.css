@@ -35,7 +35,7 @@
 .headerUnderline {
   width: 5rem;
   height: 0.25rem;
-  background-color: #2563eb;
+  background-color: #106100;
   border-radius: 9999px;
   margin: 1.5rem auto;
 }
@@ -94,7 +94,7 @@
 .serviceColorBar {
   width: 100%;
   height: 0.5rem;
-  background: linear-gradient(to right, #2563eb, #0ea5e9);
+  background: linear-gradient(to right, #106100, #0ea5e9);
 }
 
 .serviceContent {
@@ -115,7 +115,7 @@
   color: white;
   font-size: 2rem;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  background: linear-gradient(135deg, #106100, #0ea5e9);
 }
 
 .serviceCard:hover .serviceIcon {
@@ -151,7 +151,7 @@
 .serviceLink {
   display: inline-flex;
   align-items: center;
-  color: #2563eb;
+  color: #106100;
   font-weight: 600;
   font-size: 0.875rem;
   text-decoration: none;
@@ -166,7 +166,7 @@
 
 /* CTA Section */
 .ctaSection {
-  background: linear-gradient(to right, #2563eb, #1d4ed8, #2563eb);
+  background: linear-gradient(to right, #106100, #1d4ed8, #106100);
   border-radius: 1.5rem;
   padding: 3rem;
   color: white;
@@ -214,7 +214,7 @@
   display: inline-block;
   padding: 0.75rem 2rem;
   background-color: white;
-  color: #2563eb;
+  color: #106100;
   border-radius: 0.5rem;
   font-weight: 700;
   text-decoration: none;
