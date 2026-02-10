@@ -1,44 +1,24 @@
 import { Link } from 'react-router-dom'
 import styles from './Services.module.css'
+import ChildWelfareService from '../components/services/ChildWelfareService'
+import EducationalService from '../components/services/EducationalService'
+import EmbroideryTrainingService from '../components/services/EmbroideryTrainingService'
+import AwarenessService from '../components/services/AwarenessService'
+import FloodReliefService from '../components/services/FloodReliefService'
+import HealthCampService from '../components/services/HealthCampService'
+import WoodCraftService from '../components/services/WoodCraftService'
+import EmpowermentService from '../components/services/EmpowermentService'
 
 export default function Services() {
-  const services = [
-    {
-      icon: 'favorite',
-      title: 'Health & Wellness',
-      description: 'Regular health camps, medical check-ups, awareness programs, and health insurance assistance for vulnerable communities.',
-      color: 'from-red-500 to-pink-500',
-    },
-    {
-      icon: 'school',
-      title: 'Education Programs',
-      description: 'Scholarship programs, skill training workshops, digital literacy initiatives, and educational support for underprivileged children.',
-      color: 'from-blue-500 to-cyan-500',
-    },
-    {
-      icon: 'business_center',
-      title: 'Livelihood Support',
-      description: 'Vocational training, microfinance assistance, self-employment programs, and market linkage support for sustainable income.',
-      color: 'from-green-500 to-emerald-500',
-    },
-    {
-      icon: 'agriculture',
-      title: 'Agricultural Support',
-      description: 'Organic farming training, modern agricultural techniques, soil testing, and assistance with quality seeds and tools.',
-      color: 'from-amber-500 to-orange-500',
-    },
-    {
-      icon: 'home',
-      title: 'Housing & Infrastructure',
-      description: 'Support for construction of houses, sanitation facilities, water supply systems, and community infrastructure development.',
-      color: 'from-purple-500 to-pink-500',
-    },
-    {
-      icon: 'group',
-      title: 'Women & Child Welfare',
-      description: 'Women empowerment programs, child protection initiatives, nutrition support, and maternal health awareness campaigns.',
-      color: 'from-indigo-500 to-purple-500',
-    },
+  const serviceComponents = [
+    ChildWelfareService,
+    EducationalService,
+    EmbroideryTrainingService,
+    AwarenessService,
+    FloodReliefService,
+    HealthCampService,
+    WoodCraftService,
+    EmpowermentService,
   ]
 
   return (
@@ -49,7 +29,7 @@ export default function Services() {
           <h1 className={styles.headerTitle}>Our Services</h1>
           <div className={styles.headerUnderline}></div>
           <p className={styles.headerDescription}>
-            Purbottar Vikash Parishad provides comprehensive services focused on health, education, livelihood, and community development. Our programs are designed to bring sustainable change in the lives of vulnerable communities.
+            The organization has been organized and executed different program of awareness, training, camps etc. etc The details of the programs organized by the organization during the financial year 2012-13 the brief of the each program has been mentioned below:-
           </p>
         </div>
       </section>
@@ -57,45 +37,13 @@ export default function Services() {
       {/* Services Grid */}
       <section className={styles.servicesSection}>
         <div className={styles.servicesGrid}>
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={styles.serviceCard}
-            >
-              {/* Color Bar */}
-              <div style={{ background: `linear-gradient(to right, ${service.color})` }} className={styles.serviceColorBar}></div>
-              
-              {/* Content */}
-              <div className={styles.serviceContent}>
-                {/* Icon */}
-                <div className={styles.serviceIcon} style={{ background: `linear-gradient(135deg, ${service.color})` }}>
-                  <span className="material-symbols-outlined">
-                    {service.icon}
-                  </span>
-                </div>
-                
-                {/* Title & Description */}
-                <h3 className={styles.serviceTitle}>
-                  {service.title}
-                </h3>
-                <p className={styles.serviceDescription}>
-                  {service.description}
-                </p>
-                
-                {/* Link */}
-                <a className={styles.serviceLink}>
-                  Learn More
-                  <span className="material-symbols-outlined text-lg">
-                    arrow_forward
-                  </span>
-                </a>
-              </div>
-            </div>
+          {serviceComponents.map((ServiceComponent, index) => (
+            <ServiceComponent key={index} />
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className={styles.ctaSection}>
+        {/* <div className={styles.ctaSection}>
           <div className={styles.ctaBackground}></div>
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>Need Our Help?</h2>
@@ -110,11 +58,11 @@ export default function Services() {
               Contact Us Today
             </Link>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Impact Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      {/* <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-black mb-4">Service Highlights</h2>
           <div className="w-20 h-1 bg-primary rounded-full mx-auto"></div>
@@ -141,7 +89,7 @@ export default function Services() {
             <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Since inception</p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import styles from './HomePage.module.css'
+import { galleryImages } from '../data/galleryData'
 
 export default function HomePage() {
+  const [selectedImage, setSelectedImage] = useState(null)
   const news = [
     {
       id: 1,
@@ -29,39 +32,6 @@ export default function HomePage() {
       description: 'Launching a new skill training program to empower youth and create sustainable livelihood opportunities in rural areas.',
       image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDm5tPmm312anWIrwUeP9SgC_8AEudxffH66TWgd1et9x2GMj6adSZxZlFDYzpUCPnBkZGdYjV8MYCAA3rSPEiHBoVHtKHtbyxKtmkq1odyx86kH_QK4WctZ6z4O3OYll7Shj52yJK2a0nBlRXL4D25sqoxzVP6gGeohVdzN9XvnN0B4acc9TIdhX2DmBnIFDQxSa06EUdSsS1rNISYzt9sCLOFcqqjjZibDypRiGkkOHOqCPF-K0UQb3Cf3dyBwHO13oMSEwqgPz__',
       categoryColor: 'bg-orange-100 text-orange-700',
-    },
-  ]
-
-  const galleryImages = [
-    {
-      title: 'International Summit 2024',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfLV0uvJxNkgXhqakte1oJancyLTxvIPdacAAWRL-W4aIDDuPXfux_KYOLPCjuZ9yQ_ukIdjlV6hzdhA9MHZj0A-GKhn9XTR-k1DkyV3HlCtd2JCpDQK0RLhSAQja22qGz3rsALdbgrFMBgKyv0pS5SvKO0DRM3yHKhgzLjtuVibPYIE8QR_87xG6yoxT198dFvdQWKujxc5Bhe3h2IAR3HAPySmvpUgl2JmkrJMJa2ar2yIW4_rp72cZSTJu8Wbv2PqB1NplTsnpd',
-      colSpan: 1,
-    },
-    {
-      title: 'Laboratory Inspections',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuANoP0SlC_rktN8fdQ39d4T8-ZARTi11DVm92KR0YDBRWZmyM9DNfvib26OABxDE2HA8Z_w9KII9XxNkhUoD60zm4-NSfzYiFz0gA9VXf8L2hYrHd2rC1I6a1-Wxuhs3GRKaIWuqYpyX4V-6q33xeizyhaG0tCMErNziyAe0wYnDpAx5w2makR3qvP6RE9sZk9b81X-YJ21H9xr81_NYwyYNo2Jab-gQ2weJ-NlvmiwSjlKHz58Y8YQmRrG2o6SG6oA9_-M1lNndsqa',
-      colSpan: 1,
-    },
-    {
-      title: 'Departmental Workshop & Training',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1DZaLT-E8BXjRPhI75lIJFOXYdefQ8BhWtjPGj3NTTlnGo80VDU6s9mcI-9DLGr8JFNCUk8Ptf-pY8BSXw_Rudg33FrPgBygpGmx097feUthQ3PGBFxl0KvKIx5oQyHD_hyw8F0SrqaA5UJv4_fJ6cLrik2IdX5tZdeowNS5eiQYa1131gixvIuuShG_Z-mccpeHQgf_X6kRKQReoYBpUq311f2x8kYhTU9qmgMzkR-V0QrqgQ38EPgJAFv-pXFq-OGmXa1gVoRLC',
-      colSpan: 2,
-    },
-    {
-      title: 'Strategic Planning Session',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClCEitEWDVM1ADsqmBGiWi6YC4ahtDMIx1ty72IfC8ma29aPhilmvPCsPmF4NZcDLWqRoo_eW7AJ9m8SqWJRk-z2XaQ985N53KgqWKjoc-1vz029XkVoXLzwL7zSVfCJ7VhB6IdcZRFoXs4L55uSPkGw5Ulhk62goc6VGsDR6jdmZdGkA2LKbyPPeHO2YW78jViSXGskjvzyTxJl8SSkg8xrcT26Eq_a8-2tWAIIojuYwzouqWW68z6WIzOhtixWDNMhOY7nQghVK_',
-      colSpan: 2,
-    },
-    {
-      title: 'Annual Press Briefing',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBTVq7mT_ILsLcM0ydCHRbzyHOmY4DOj-amsfUyveAhBDWXnWgQbqtu9V-VgHaS4ie91-fTRItjG7WXKrmgwDn2GfN_lEjYtnUkDhvXNR9zRMfdUxro4Yw0UziszGEsT1u0Rq0AlXqxTzIBaiRFfhWNViYNxSQljQ1CQeVTf_mrAlHDGf1VWacJxSNlgIbFznlsl6WxQbyoYGYFbPq3nZinOeOpAaVd62gjb0eXrNgEBevAJhFgszbPaIB-_KKpRJO8BfcMt9REvyzk',
-      colSpan: 1,
-    },
-    {
-      title: 'National Civic Conference',
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5DJAgLXd7_i9NckwoSZCU0db-cSYNVNIbzx11FTMbD4Ak_HGDrLqGO4eyg7K_s7yCMcYISjPdxqHZw_FDzE8h9opnFV9GkUogIo4gIRc80njJHClcYg2HGsYT0IpgwhSW7jMM1UOeVRLarYf3CSia3owhnps9_mSAcy-ny_ymoE63H5lbS9LY5qCpfjwML0MrdxOFrJtZPX6Zl-qL5WL1ekSgbDpa39e_7HvloPIUPjvfV3AGJjIcHUwsy3FPFvH-0Pe2ZgehslRm',
-      colSpan: 1,
     },
   ]
 
@@ -148,24 +118,73 @@ export default function HomePage() {
       <section className={styles.gallerySection}>
         <h2 className={styles.gallerySectionTitle}>Photo Gallery</h2>
         <div className={styles.galleryGrid}>
-          {galleryImages.map((image, index) => (
+          {galleryImages.map((image) => (
             <div
-              key={index}
-              className={`${styles.galleryItem}`}
+              key={image.id}
+              className={styles.galleryItem}
+              onClick={() => setSelectedImage(image)}
             >
+              {/* Image */}
               <img
                 src={image.src}
                 alt={image.title}
                 className={styles.galleryImage}
               />
-              <div className={styles.galleryItemTitle}>{image.title}</div>
+
+              {/* Overlay */}
+              <div className={styles.galleryItemOverlay}>
+                <div>
+                  <p className={styles.galleryItemTitle}>{image.title}</p>
+                  <p className={styles.galleryItemCaption}>
+                    <span className="material-symbols-outlined text-sm">zoom_in</span>
+                    Click to view
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className={styles.modalBackdrop}
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className={styles.closeButton}
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+
+            {/* Image */}
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.title}
+              className={styles.modalImage}
+            />
+
+            {/* Title */}
+            <div className={styles.modalInfo}>
+              <h2>{selectedImage.title}</h2>
+              <p style={{fontSize: '0.875rem', opacity: 0.7, marginTop: '0.5rem'}}>
+                <span className="material-symbols-outlined" style={{fontSize: '0.875rem'}}>image</span>
+                Click outside to close
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Call to Action Stats Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      {/* <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="bg-gradient-to-r from-primary to-blue-700 rounded-3xl p-12 text-white overflow-hidden relative">
           <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="relative z-10">
@@ -194,7 +213,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

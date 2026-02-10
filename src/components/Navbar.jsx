@@ -15,6 +15,7 @@ export default function Navbar() {
     { label: 'Gallery', path: '/gallery' },
     { label: 'Vision & Mission', path: '/vision' },
     { label: 'Annual Report', path: '/reports' },
+    { label: 'Donate', path: '/donate' },
   ]
 
   return (

@@ -72,7 +72,7 @@ export default function Footer() {
           <p className={styles.footerCopyright}>© {currentYear} Purbottar Vikash Parishad. All Rights Reserved</p>
           <div className={styles.footerCredit}>
             <span className="material-symbols-outlined" style={{fontSize: '1rem'}}>verified_user</span>
-            <span>Designed with care</span>
+            <span>Designed by Ayan Kashyap</span>
           </div>
         </div>
       </div>

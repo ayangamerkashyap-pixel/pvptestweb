@@ -43,7 +43,7 @@
 .headerDescription {
   font-size: 1.125rem;
   color: #4b5563;
-  max-width: 48rem;
+  max-width: 100rem;
   margin: 0 auto;
   line-height: 1.6;
   transition: color 0.3s ease;
