@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from '../styles/modules/Footer.module.css'
+import logo from '/workspaces/pvptestweb/Images/Logo.jpg'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Logo & About */}
           <div className={styles.footerSection}>
             <div className={styles.footerLogo}>
-              <img src="/Images/Logo.jpg" alt="Logo" className={styles.footerLogoImg} />
+              <img src={logo} alt="Logo" className={styles.footerLogoImg} />
               <span className={`${styles.footerLogoText}`}>PVP</span>
             </div>
             <p className={`${styles.footerDescription}`}>

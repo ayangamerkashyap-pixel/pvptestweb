@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from '../styles/modules/Header.module.css'
+import logo from '/workspaces/pvptestweb/Images/Logo.jpg'
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false)
@@ -14,7 +15,7 @@ export default function Header() {
       <div className={styles.headerContent}>
         <div className={styles.headerTop}>
           <div className={styles.logoSection}>
-            <img src="/Images/Logo.jpg" alt="Purbottar Vikash Parishad Logo" className={styles.logo} />
+            <img src={logo} alt="Purbottar Vikash Parishad Logo" className={styles.logo} />
             <h1 className={`${styles.logoText} ${isDark ? styles.dark : ''}`}>Purbottar Vikash Parishad</h1>
           </div>
           <button
