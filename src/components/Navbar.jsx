@@ -35,14 +35,14 @@ export default function Navbar() {
           </div>
 
           <div className={styles.navRight}>
-            <div className={styles.searchBox}>
+            {/* <div className={styles.searchBox}>
               <span className="material-symbols-outlined">search</span>
               <input
                 className={styles.searchInput}
                 placeholder="Search resources..."
                 type="text"
               />
-            </div>
+            </div> */}
             <Link
               to="/contact"
               className={styles.contactBtn}

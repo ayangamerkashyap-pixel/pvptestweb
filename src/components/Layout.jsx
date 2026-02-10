@@ -3,6 +3,7 @@ import Header from './Header'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import styles from '../styles/modules/Layout.module.css'
+import PageTransition from './PageTransition'
 
 export default function Layout() {
   return (
@@ -15,7 +16,9 @@ export default function Layout() {
       </div>
       <main className={styles.layoutMain}>
         <div className={styles.mainContent}>
-          <Outlet />
+          <PageTransition>
+            <Outlet />
+          </PageTransition>
         </div>
       </main>
       <div className={styles.layoutFooter}>

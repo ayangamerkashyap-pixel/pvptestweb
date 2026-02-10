@@ -17,3 +17,19 @@ body {
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+/* Page transition styles */
+.page-fade {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+.page-fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ensure the transition container expands to its content */
+.page-fade > * {
+  min-height: 1px;
+}
