@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from '../styles/modules/Header.module.css'
-import logo from '/workspaces/pvptestweb/Images/Logo.jpg'
+import logo from '../../Images/Logo.jpg'
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false)
